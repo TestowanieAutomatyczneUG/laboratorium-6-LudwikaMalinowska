@@ -11,6 +11,8 @@ class Hamming:
         >>> h = Hamming()
         >>> h.distance("", "")
         0
+        >>> h.distance("A", "A")
+        0
         """
 
         if a == "" and b == "":
