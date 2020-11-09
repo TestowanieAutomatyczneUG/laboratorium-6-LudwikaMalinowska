@@ -67,5 +67,8 @@ class ValidateTest(unittest.TestCase):
     def test_must_have_number(self):
         self.assertEqual(self.temp.ValidPassword("Password"), False)
 
+    def test_must_have_special_char(self):
+        self.assertEqual(self.temp.ValidPassword("Password.1"), True)
+
     def tearDown(self):
         self.temp = None
