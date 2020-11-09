@@ -13,10 +13,17 @@ class Validate:
         >>> v = Validate()
         >>> v.ValidPassword("1234567")
         False
+        >>> v.ValidPassword("password")
+        False
         """
 
+        hasCapitalLetter = False
         if len(passw) < 8:
             return False
 
-        return True
+        for letter in passw:
+            if letter.isupper():
+                hasCapitalLetter = True
+
+        return hasCapitalLetter
 
