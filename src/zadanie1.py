@@ -27,6 +27,10 @@ class Hamming:
         Traceback (most recent call last):
             ...
         ValueError: ValueError
+        >>> h.distance("", "G")
+        Traceback (most recent call last):
+            ...
+        ValueError: ValueError
         """
 
         if a == "" and b == "":
