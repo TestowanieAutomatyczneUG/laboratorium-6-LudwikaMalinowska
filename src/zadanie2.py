@@ -1,4 +1,5 @@
 import re
+import unittest
 
 class Validate:
 
@@ -49,7 +50,17 @@ class Validate:
             if passw.find(char):
                 hasChar = True
 
-
-
         return hasCapitalLetter and hasNumber and hasChar
 
+
+class ValidateTest(unittest.TestCase):
+
+    def setUp(self):
+        self.temp = Validate()
+
+    def test_less_8(self):
+        self.assertEqual(self.temp.ValidPassword("12345"), False)
+
+
+    def tearDown(self):
+        self.temp = None
