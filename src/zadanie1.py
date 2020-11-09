@@ -23,6 +23,10 @@ class Hamming:
         Traceback (most recent call last):
             ...
         ValueError: ValueError
+        >>> h.distance("ATA", "AGTG")
+        Traceback (most recent call last):
+            ...
+        ValueError: ValueError
         """
 
         if a == "" and b == "":
