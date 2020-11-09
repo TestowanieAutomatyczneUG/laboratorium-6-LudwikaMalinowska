@@ -64,5 +64,8 @@ class ValidateTest(unittest.TestCase):
     def test_must_have_Capital_Letter(self):
         self.assertEqual(self.temp.ValidPassword("password"), False)
 
+    def test_must_have_number(self):
+        self.assertEqual(self.temp.ValidPassword("Password"), False)
+
     def tearDown(self):
         self.temp = None
