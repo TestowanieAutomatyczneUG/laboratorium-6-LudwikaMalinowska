@@ -19,10 +19,13 @@ class Validate:
         False
         >>> v.ValidPassword("password1")
         False
+        >>> v.ValidPassword("Password.1")
+        True
         """
 
         hasCapitalLetter = False
         hasNumber = False
+        hasChar = False
 
         if len(passw) < 8:
             return False
@@ -39,5 +42,14 @@ class Validate:
                 hasNumber = True
                 break
 
-        return hasCapitalLetter and hasNumber
+        characters = '!"#$%&' + "'" + '()*+,-./:;<=>?@[' + "\\" + ']^_`{|}~'
+        # print(characters)
+
+        for char in characters:
+            if passw.find(char):
+                hasChar = True
+
+
+
+        return hasCapitalLetter and hasNumber and hasChar
 
