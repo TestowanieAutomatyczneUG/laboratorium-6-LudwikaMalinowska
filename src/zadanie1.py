@@ -19,6 +19,10 @@ class Hamming:
         0
         >>> h.distance("GGACGGATTCTG", "AGGACGGATTCT")
         9
+        >>> h.distance("AATG", "AAA")
+        Traceback (most recent call last):
+            ...
+        ValueError: ValueError
         """
 
         if a == "" and b == "":
