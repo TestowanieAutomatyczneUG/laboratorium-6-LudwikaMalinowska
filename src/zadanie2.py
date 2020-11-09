@@ -1,3 +1,5 @@
+import re
+
 class Validate:
 
     # password = "P455w0rD"
@@ -15,15 +17,27 @@ class Validate:
         False
         >>> v.ValidPassword("password")
         False
+        >>> v.ValidPassword("password1")
+        False
         """
 
         hasCapitalLetter = False
+        hasNumber = False
+
         if len(passw) < 8:
             return False
 
         for letter in passw:
             if letter.isupper():
                 hasCapitalLetter = True
+                break
 
-        return hasCapitalLetter
+        numbers = [0,1,2,3,4,5,6,7,8,9]
+
+        for num in numbers:
+            if passw.find(str(num)) >= 0:
+                hasNumber = True
+                break
+
+        return hasCapitalLetter and hasNumber
 
