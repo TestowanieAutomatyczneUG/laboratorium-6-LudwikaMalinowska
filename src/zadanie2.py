@@ -6,23 +6,23 @@ class Validate:
     # password = "P455w0rD"
 
     def ValidPassword(self, passw):
-        """
-        metoda sprawdza czy podane hasło (passw) jest prawidłowe
-        jeśli jest prawidłowe zwraca true, w przeciwnym wypadku false
-        Prawidłowe hasło to hasło składające się z:
-        -Co najmniej 8 liter
-        -Co najmniej 1 wielka litera, cyfra oraz znak specjalny.
-
-        >>> v = Validate()
-        >>> v.ValidPassword("1234567")
-        False
-        >>> v.ValidPassword("password")
-        False
-        >>> v.ValidPassword("password1")
-        False
-        >>> v.ValidPassword("Password.1")
-        True
-        """
+        # """
+        # metoda sprawdza czy podane hasło (passw) jest prawidłowe
+        # jeśli jest prawidłowe zwraca true, w przeciwnym wypadku false
+        # Prawidłowe hasło to hasło składające się z:
+        # -Co najmniej 8 liter
+        # -Co najmniej 1 wielka litera, cyfra oraz znak specjalny.
+        #
+        # >>> v = Validate()
+        # >>> v.ValidPassword("1234567")
+        # False
+        # >>> v.ValidPassword("password")
+        # False
+        # >>> v.ValidPassword("password1")
+        # False
+        # >>> v.ValidPassword("Password.1")
+        # True
+        # """
 
         hasCapitalLetter = False
         hasNumber = False
@@ -61,6 +61,8 @@ class ValidateTest(unittest.TestCase):
     def test_less_8(self):
         self.assertEqual(self.temp.ValidPassword("12345"), False)
 
+    def test_must_have_Capital_Letter(self):
+        self.assertEqual(self.temp.ValidPassword("password"), False)
 
     def tearDown(self):
         self.temp = None
