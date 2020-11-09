@@ -13,6 +13,8 @@ class Hamming:
         0
         >>> h.distance("A", "A")
         0
+        >>> h.distance("G", "T")
+        1
         """
 
         if a == "" and b == "":
