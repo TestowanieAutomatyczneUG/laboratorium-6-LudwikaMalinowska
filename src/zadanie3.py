@@ -40,22 +40,6 @@ def statement(invoice, plays):
     return result
 
 
-#
-# invoice1 = {
-#             "customer": "BigCo",
-#             "performances": [
-#                 {
-#                     "playID": "hamlet",
-#                     "audience": 55
-#                 }
-#             ]
-#         }
-# plays1 = {
-#             "hamlet": {"name": "Hamlet", "type": "tragedy"}
-#         }
-
-# print(statement(invoice1, plays1))
-
 class StatementTest(unittest.TestCase):
 
     def test_hamlet_audience_55(self):
@@ -117,7 +101,6 @@ class StatementTest(unittest.TestCase):
         plays4 = {"as-like": {"name": "As You Like It", "type": "com"}}
 
         self.assertRaises(ValueError, statement, invoice4, plays4)
-
 
 
 if __name__ == "__main__":
