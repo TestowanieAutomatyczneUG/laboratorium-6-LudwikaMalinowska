@@ -108,6 +108,16 @@ class StatementTest(unittest.TestCase):
 
         self.assertEqual(statement(invoice3, plays3), result3)
 
+    def test_disallow_unknown_type(self):
+        invoice4 = {"customer": "BigCo",
+                    "performances": [{
+                        "playID": "as-like",
+                        "audience": 20
+                    }, ]}
+        plays4 = {"as-like": {"name": "As You Like It", "type": "com"}}
+
+        self.assertRaises(ValueError, statement, invoice4, plays4)
+
 
 
 if __name__ == "__main__":
