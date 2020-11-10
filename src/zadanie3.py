@@ -84,6 +84,18 @@ class StatementTest(unittest.TestCase):
 
         self.assertEqual(statement(invoice2, plays2), result2)
 
+    def test_as_you_like_it_35(self):
+        invoice3 = {"customer": "BigCo",
+                    "performances": [{
+      "playID": "as-like",
+      "audience": 35
+    },]}
+        plays3 = {"as-like": {"name": "As You Like It", "type": "comedy"}}
+
+        result3 = "Statement for BigCo\n As You Like It: $580.00 (35 seats)\nAmount owed is $580.00\nYou earned 12 credits\n"
+
+        self.assertEqual(statement(invoice3, plays3), result3)
+
 
 
 if __name__ == "__main__":
